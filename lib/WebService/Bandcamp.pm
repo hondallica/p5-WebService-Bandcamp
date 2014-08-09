@@ -39,6 +39,11 @@ sub search {
     return $self->_make_request('search', \%query_param);
 }
 
+sub discography {
+    my ($self, %query_param) = @_;
+    return $self->_make_request('discography', \%query_param);
+}
+
 sub _make_request {
     my ( $self, $module, $query_param ) = @_;
 

@@ -52,5 +52,15 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/hondallica/p5-WebService-Bandcamp/issues"
+      },
+      "homepage" : "https://github.com/hondallica/p5-WebService-Bandcamp",
+      "repository" : {
+         "url" : "https://github.com/hondallica/p5-WebService-Bandcamp.git",
+         "web" : "https://github.com/hondallica/p5-WebService-Bandcamp"
+      }
+   },
    "version" : "0.01"
 }
