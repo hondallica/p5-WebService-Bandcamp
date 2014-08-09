@@ -35,9 +35,14 @@ $data->{discography}[0]{'release_date'}, 1399680000;
 $data->{discography}[0]{'artist'}, 'No Sin Evades His Gaze';
 $data->{discography}[0]{'small_art_url'}, 'http://f1.bcbits.com/img/a2604285726_3.jpg';
 
-
-
-
+$data = $bandcamp->info(
+    band_id => $band_id,
+);
+is $data->{'band_id'}, 844506038;
+is $data->{'offsite_url'}, 'https://www.facebook.com/nosinevadeshisgaze?ref_type=bookmark';
+is $data->{'name'}, 'No Sin Evades His Gaze';
+is $data->{'url'}, 'http://nosinevadeshisgaze.bandcamp.com';
+is $data->{'subdomain'},'nosinevadeshisgaze';
 warn Dumper $data;
 
 
