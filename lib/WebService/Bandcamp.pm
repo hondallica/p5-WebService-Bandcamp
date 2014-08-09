@@ -100,7 +100,7 @@ WebService::Bandcamp - A simple and fast interface to the bandcamp.com API
 
 =head1 DESCRIPTION
 
-The module provides a simple interface to the Bandcamp.com API. To use this module, you must first sign up at http://bandcamp.com/developer#key_request to receive an API key.
+The module provides a simple interface to the Bandcamp.com API. To use this module, you must first sign up at http://bandcamp.com/developer to receive an API key.
 
 =head1 SEE ALSO
 
