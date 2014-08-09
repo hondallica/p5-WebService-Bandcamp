@@ -36,21 +36,21 @@ has 'http' => (
 
 sub search {
     my ($self, %query_param) = @_;
-    return $self->_make_request('search', \%query_param);
+    return $self->_make_request('api/band/3/search', \%query_param);
 }
 
 sub discography {
     my ($self, %query_param) = @_;
-    return $self->_make_request('discography', \%query_param);
+    return $self->_make_request('api/band/3/discography', \%query_param);
 }
 
 sub info {
     my ($self, %query_param) = @_;
-    return $self->_make_request('info', \%query_param);
+    return $self->_make_request('api/band/3/info', \%query_param);
 }
 
 sub _make_request {
-    my ( $self, $module, $query_param ) = @_;
+    my ( $self, $path, $query_param ) = @_;
 
     my $query_string = URI->new;
     $query_string->query_param( 'key', $self->api_key );
@@ -62,7 +62,7 @@ sub _make_request {
     $self->http->request(
         scheme => 'http',
         host => 'api.bandcamp.com',
-        path_query => "api/band/3/$module$query_string",
+        path_query => "$path$query_string",
         method => 'GET',
     );
 
