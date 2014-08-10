@@ -110,6 +110,11 @@ WebService::Bandcamp - A simple and fast interface to the bandcamp.com API
     my $bandcamp WebService::Bandcamp->new();
 
     my $data = $bandcamp->band_search(name => 'metal');
+    $data = $bandcamp->band_discography(band_id => 666);
+    $data = $bandcamp->band_info(band_id => 666);
+    $data = $bandcamp->album_info(album_id => 666);
+    $data = $bandcamp->track_info(track_id => 666);
+    $data = $bandcamp->url_info(url => 'http://example.com/band_or_album_or_track_url');
 
 =head1 DESCRIPTION
 
