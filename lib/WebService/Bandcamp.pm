@@ -54,6 +54,11 @@ sub album_info {
     return $self->_make_request('api/album/2/info', \%query_param);
 }
 
+sub track_info {
+    my ($self, %query_param) = @_;
+    return $self->_make_request('api/track/3/info', \%query_param);
+}
+
 sub _make_request {
     my ( $self, $path, $query_param ) = @_;
 
