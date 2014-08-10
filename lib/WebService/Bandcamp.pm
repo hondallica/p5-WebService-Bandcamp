@@ -109,7 +109,7 @@ WebService::Bandcamp - A simple and fast interface to the bandcamp.com API
     # or default value $ENV{'BANDCAMP_API_KEY'}
     my $bandcamp WebService::Bandcamp->new();
 
-    my $data = $bandcamp->search(name => 'metal');
+    my $data = $bandcamp->band_search(name => 'metal');
 
 =head1 DESCRIPTION
 
