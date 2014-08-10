@@ -34,35 +34,38 @@ has 'http' => (
 );
 
 
-sub search {
+sub band_search {
     my ($self, %query_param) = @_;
     return $self->_make_request('api/band/3/search', \%query_param);
 }
 
-sub discography {
+sub band_discography {
     my ($self, %query_param) = @_;
     return $self->_make_request('api/band/3/discography', \%query_param);
 }
 
-sub info {
+sub band_info {
     my ($self, %query_param) = @_;
     return $self->_make_request('api/band/3/info', \%query_param);
+}
+
+sub album_info {
+    my ($self, %query_param) = @_;
+    return $self->_make_request('api/album/2/info', \%query_param);
 }
 
 sub _make_request {
     my ( $self, $path, $query_param ) = @_;
 
-    my $query_string = URI->new;
-    $query_string->query_param( 'key', $self->api_key );
-    map {
-        $query_string->query_param( $_, $query_param->{$_} )
-    } keys %$query_param;
+    my $query = URI->new;
+    $query->query_param( 'key', $self->api_key );
+    map { $query->query_param( $_, $query_param->{$_} ) } keys %$query_param;
 
     my ($minor_version, $code, $message, $headers, $content) = 
     $self->http->request(
         scheme => 'http',
         host => 'api.bandcamp.com',
-        path_query => "$path$query_string",
+        path_query => "$path$query",
         method => 'GET',
     );
 
