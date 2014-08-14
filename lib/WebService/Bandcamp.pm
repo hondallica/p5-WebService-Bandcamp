@@ -8,7 +8,7 @@ use URI::QueryParam;
 use Carp;
 use Moo;
 use namespace::clean;
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 $Net::DNS::Lite::CACHE = Cache::LRU->new( size => 512 );
 
@@ -25,7 +25,7 @@ has 'http' => (
     default  => sub {
         my $http = Furl::HTTP->new(
             inet_aton => \&Net::DNS::Lite::inet_aton,
-            agent => 'Net::LastFM::Lite' . $VERSION,
+            agent => 'WebService::Bandcamp' . $VERSION,
             headers => [ 'Accept-Encoding' => 'gzip',],
         );
         $http->env_proxy;
