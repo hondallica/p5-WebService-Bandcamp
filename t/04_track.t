@@ -3,7 +3,9 @@ use Test::More 0.98;
 use WebService::Bandcamp;
 
 
-my $bandcamp = new WebService::Bandcamp;
+my $bandcamp = new WebService::Bandcamp(
+    api_key => 'vatnajokull',
+);
 
 my $data = $bandcamp->track_info(track_id => 1250910200);
 is $data->{'band_id'}, 844506038;

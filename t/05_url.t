@@ -3,7 +3,9 @@ use Test::More 0.98;
 use WebService::Bandcamp;
 
 
-my $bandcamp = new WebService::Bandcamp;
+my $bandcamp = new WebService::Bandcamp(
+    api_key => 'vatnajokull',
+);
 
 my $band_url = 'http://nosinevadeshisgaze.bandcamp.com';
 my $album_url = 'http://nosinevadeshisgaze.bandcamp.com/album/age-of-sedation-2014?pk=564';
