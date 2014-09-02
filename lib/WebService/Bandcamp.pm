@@ -16,7 +16,7 @@ has 'api_key' => (
     is => 'rw',
     isa => sub { $_[0] },
     required => 1,
-    default => $ENV{BANDCAMP_API_KEY},
+    default => sub { $ENV{BANDCAMP_API_KEY} },
 );
 
 has 'http' => (
